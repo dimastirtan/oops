@@ -1,4 +1,4 @@
-<?php require_once "app/views/layout/header.php"; ?>
+
 
 <h1>Tambah Pelanggan</h1>
 <form method="post">
@@ -23,5 +23,3 @@
         <a href="index.php?page=pelanggan" class="btn btn-secondary">Kembali</a>
     </div>
 </form>
-
-<?php require_once "app/views/layout/footer.php"; ?>

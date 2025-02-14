@@ -1,4 +1,4 @@
-<?php require_once "app/views/layout/header.php"; ?>
+
 
 <h1>Data Pelanggan</h1>
 <a href="index.php" class="btn btn-secondary">Kembali</a>
@@ -6,8 +6,8 @@
 
 
 <div style="max-height: 600px; overflow-y: auto;" class="my-3">
-    <table border="1" class="table table-striped">
-        <thead class="table-dark">
+    <table border="1" class="table table-dark table-striped-columns">
+        <thead class="">
             <tr>
                 <td>No</td>
                 <td>Nama Pelanggan</td>
@@ -39,6 +39,3 @@
 
 
 
-
-
-<?php require_once "app/views/layout/footer.php"; ?>

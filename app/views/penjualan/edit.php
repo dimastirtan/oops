@@ -1,4 +1,4 @@
-<?php require_once "app/views/layout/header.php"; ?>
+
 
 <h1 class="mt-3">Edit Penjualan</h1>
 <?php
@@ -30,6 +30,3 @@ if ($penjualan):
     <p>Data pelanggan tidak ditemukan.</p>
     <a href="index.php?page=pelanggan">Kembali</a>
 <?php endif; ?>
-
-
-<?php require_once "app/views/layout/footer.php"; ?>

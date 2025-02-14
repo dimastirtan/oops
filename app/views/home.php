@@ -1,4 +1,4 @@
-<?php require_once "app/views/layout/header.php"; ?>
+
 
 <div class="container text-center">
     <div class="row">
@@ -30,5 +30,3 @@
         </a>
         </div>
 </div>
-
-<?php require_once "app/views/layout/footer.php"; ?>

@@ -1,4 +1,4 @@
-<?php require_once "app/views/layout/header.php"; ?>
+
 
 <h1 class="mt-3">Edit Pelanggan</h1>
 <?php
@@ -31,5 +31,3 @@ if ($pelanggan):
     <a href="index.php?page=pelanggan">Kembali</a>
 <?php endif; ?>
 
-
-<?php require_once "app/views/layout/footer.php"; ?>
