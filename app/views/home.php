@@ -6,7 +6,7 @@
             <a href="index.php?page=pelanggan" style="text-decoration: none;">
                 <div class="card" style="height: 30rem;">
                 <div class="card-body px-4">
-                    <h5 class="card-title">Managemen Pelanggan</h5>
+                    <h5 class="card-title">Pelanggan</h5>
                 </div>
                 </div>
             </a>

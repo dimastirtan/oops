@@ -10,7 +10,7 @@ class PelangganController {
 
     public function pelanggan() {
         $data['pelanggan'] = $this->model->getAll();
-        include 'app/views/pelanggan/index.php';
+        include 'app/views/contents/pelanggan.php';
     }
 
     public function tambahpelanggan() {
@@ -18,7 +18,6 @@ class PelangganController {
             $this->model->create($_POST);
             header("Location: index.php?page=pelanggan");
         }
-        include 'app/views/pelanggan/tambah.php';
     }
 
     public function editpelanggan($id) {
@@ -27,7 +26,6 @@ class PelangganController {
             header("Location: index.php?page=pelanggan");
         }
         $data['pelanggan'] = $this->model->getById($id);
-        include 'app/views/pelanggan/edit.php';
     }
 
     public function hapuspelanggan($id) {

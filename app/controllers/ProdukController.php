@@ -10,7 +10,7 @@ class ProdukController {
 
     public function produk() {
         $data['produk'] = $this->model->getAll();
-        include 'app/views/produk/index.php';
+        include 'app/views/contents/produk.php';
         
     }
 

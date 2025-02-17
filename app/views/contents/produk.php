@@ -21,12 +21,10 @@
             <td style="width: 15rem;"><?= $produk['Harga']; ?></td>
             <td><?= $produk['Stok']; ?></td>
             <td><?= $produk['Kategori']; ?></td>
-            <td>
-                <a href="index.php?page=editproduk&id=<?= $produk['ProdukID']; ?>" 
-                    class="btn btn-warning" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#editProduk">Edit</a>
-
+            <td><a href="index.php?page=editproduk&id" 
+                     class="btn btn-warning" 
+                     data-bs-toggle="modal" 
+                     data-bs-target="#editProduk<?= $produk['ProdukID']; ?>">Edit</a>
                 <a href="index.php?page=hapusproduk&id=<?= $produk['ProdukID']; ?>" 
                 class="btn btn-danger" 
                 onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
@@ -77,7 +75,8 @@
 </div>
 
 <!-- Modal Edit Produk -->
-<div class="modal fade" id="editProduk" tabindex="-1" aria-hidden="true">
+<?php foreach ($data['produk'] as $produk): ?>
+<div class="modal fade" id="editProduk<?= $produk['ProdukID']; ?>" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -94,7 +93,8 @@
 
                     <div class="mb-3">
                         <label class="form-label">Harga:</label>
-                        <textarea name="Harga" class="form-control" style="height: 100px;" required><?= htmlspecialchars($produk['Harga']); ?></textarea>
+                        <input type="text" class="form-control" name="Harga" 
+                               value="<?= htmlspecialchars($produk['Harga']); ?>" required>
                     </div>
 
                     <div class="mb-3">
@@ -118,3 +118,4 @@
         </div>
     </div>
 </div>
+<?php endforeach; ?>
