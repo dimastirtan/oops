@@ -13,30 +13,31 @@ $penjualan = new PenjualanController();
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 $id = isset($_GET['id']) ? $_GET['id'] : null;
+$action = isset($_GET['action']) ? $_GET['action']: null;
 
 if ($page == 'pelanggan') {  //routing untuk pelanggan
     $pelanggan->pelanggan();
-} elseif ($page == 'tambahpelanggan') {
+} elseif ($action == 'tambahpelanggan') {
     $pelanggan->tambahpelanggan();
-} elseif ($page == 'editpelanggan') {
+} elseif ($action == 'editpelanggan') {
     $pelanggan->editpelanggan($id);
-} elseif ($page == 'hapuspelanggan') {
+} elseif ($action == 'hapuspelanggan') {
     $pelanggan->hapuspelanggan($id);
 } elseif ($page == 'produk') {  //routing untuk produk
     $produk->produk();
-} elseif ($page == 'tambahproduk') {
+} elseif ($action == 'tambahproduk') {
     $produk->tambahproduk();
-} elseif ($page == 'editproduk') {
+} elseif ($action == 'editproduk') {
     $produk->editproduk($id);
-} elseif ($page == 'hapusproduk') {
+} elseif ($action == 'hapusproduk') {
     $produk->hapusproduk($id);
 } elseif ($page == 'penjualan') {  //routing untuk penjualan
     $penjualan->penjualan();
-} elseif ($page == 'tambahpenjualan') {
+} elseif ($action == 'tambahpenjualan') {
     $penjualan->tambahpenjualan();
-} elseif ($page == 'editpenjualan') {
+} elseif ($action == 'editpenjualan') {
     $penjualan->editpenjualan($id);
-} elseif ($page == 'hapuspenjualan') {
+} elseif ($action == 'hapuspenjualan') {
     $penjualan->hapuspenjualan($id);
 } else {
     $home->home();

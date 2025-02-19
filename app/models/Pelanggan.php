@@ -6,13 +6,14 @@ class Pelanggan extends Database {
     public function getAll() {
         $query = "SELECT * FROM pelanggan";
         $result = $this->koneksi->query($query);
-
-        $rows = [];
+    
+        $pelanggan = [];
         while ($row = $result->fetch_assoc()) {
-            $rows[] = $row;
+            $pelanggan[] = $row;
         }
-        return $rows;
+        return $pelanggan;
     }
+    
 
     public function getById($id) {
         $query = "SELECT * FROM pelanggan WHERE PelangganID = '$id'";

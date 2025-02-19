@@ -25,11 +25,11 @@
                 <td><?= $pelanggan['NamaPelanggan']; ?></td>
                 <td style="width: 30rem;"><?= $pelanggan['Alamat']; ?></td>
                 <td><?= $pelanggan['NomorTelepon']; ?></td>
-                <td><a href="index.php?page=editpelanggan&id" 
+                <td><a href="index.php?action=editpelanggan&id" 
                        class="btn btn-warning" 
                        data-bs-toggle="modal" 
                        data-bs-target="#editPelanggan<?= $pelanggan['PelangganID']; ?>">Edit</a>
-                    <a href="index.php?page=hapuspelanggan&id=<?= $pelanggan['PelangganID']; ?>"x  class="btn btn-danger"
+                    <a href="index.php?action=hapuspelanggan&id=<?= $pelanggan['PelangganID']; ?>"x  class="btn btn-danger"
                        onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
                 </td>
             </tr>
@@ -47,7 +47,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form method="post" action="index.php?page=tambahpelanggan">
+      <form method="post" action="index.php?action=tambahpelanggan">
             <div class="mb-3">
                 <label class="form-label">Nama Pelanggan:</label>
                 <input class="form-control" type="text" name="NamaPelanggan" required><br>
@@ -83,7 +83,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="index.php?page=editpelanggan&id=<?= $pelanggan['PelangganID']; ?>">
+                    <form method="post" action="index.php?action=editpelanggan&id=<?= $pelanggan['PelangganID']; ?>">
                         <div class="mb-3">
                             <label class="form-label">Nama Pelanggan:</label>
                             <input type="text" class="form-control" name="NamaPelanggan" 

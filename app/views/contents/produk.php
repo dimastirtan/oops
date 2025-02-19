@@ -18,14 +18,14 @@
         <tbody>
             <td><?= $no++; ?></td>
             <td style="width: 25rem;"><?= $produk['NamaProduk']; ?></td>
-            <td style="width: 15rem;"><?= $produk['Harga']; ?></td>
+            <td style="width: 15rem;">Rp. <?= number_format($produk['Harga'], 2); ?></td>
             <td><?= $produk['Stok']; ?></td>
             <td><?= $produk['Kategori']; ?></td>
-            <td><a href="index.php?page=editproduk&id" 
+            <td><a href="index.php?action=editproduk&id" 
                      class="btn btn-warning" 
                      data-bs-toggle="modal" 
                      data-bs-target="#editProduk<?= $produk['ProdukID']; ?>">Edit</a>
-                <a href="index.php?page=hapusproduk&id=<?= $produk['ProdukID']; ?>" 
+                <a href="index.php?action=hapusproduk&id=<?= $produk['ProdukID']; ?>" 
                 class="btn btn-danger" 
                 onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
             </td>
@@ -43,7 +43,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form method="post" action="index.php?page=tambahproduk">
+      <form method="post" action="index.php?action=tambahproduk">
             <div class="mb-3">
                 <label class="form-label">Nama Produk:</label>
                 <input class="form-control" type="text" name="NamaProduk" required><br>
@@ -84,7 +84,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="post" action="index.php?page=editproduk&id=<?= $produk['ProdukID']; ?>">
+                <form method="post" action="index.php?action=editproduk&id=<?= $produk['ProdukID']; ?>">
                     <div class="mb-3">
                         <label class="form-label">Nama Produk:</label>
                         <input type="text" class="form-control" name="NamaProduk" 

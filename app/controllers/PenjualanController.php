@@ -9,17 +9,33 @@ class PenjualanController {
     }
 
     public function penjualan() {
+        $pelangganModel = new Pelanggan();
+
         $data['penjualan'] = $this->model->getAll();
-        include 'app/views/penjualan/index.php';
+        $data['pelanggan'] = $pelangganModel->getAll();
+        include 'app/views/contents/penjualan.php';
     }
 
     public function tambahpenjualan() {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->model->create($_POST);
-            header("Location: index.php?page=penjualan");
+        if (!isset($_POST['PelangganID']) || empty($_POST['PelangganID'])) {
+            die("Error: Pelanggan harus dipilih.");
         }
-        include 'app/views/penjualan/tambah.php';
+    
+        $data = [
+            'TanggalPenjualan' => $_POST['TanggalPenjualan'],
+            'TotalHarga' => $_POST['TotalHarga'],
+            'PelangganID' => $_POST['PelangganID']
+        ];
+
+        $penjualanModel = new Penjualan();
+        if ($penjualanModel->create($data)) {
+            header("Location: index.php?page=penjualan");
+            exit();
+        } else {
+            die("Error: Gagal menambahkan data penjualan.");
+        }
     }
+    
 
     public function editpenjualan($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -27,7 +43,6 @@ class PenjualanController {
             header("Location: index.php?page=penjualan");
         }
         $data['penjualan'] = $this->model->getById($id);
-        include 'app/views/penjualan/edit.php';
     }
 
     public function hapuspenjualan($id) {
