@@ -9,45 +9,34 @@ class PenjualanController {
     }
 
     public function penjualan() {
-        $pelangganModel = new Pelanggan();
-
+        $this->model = new Penjualan();
+        
         $data['penjualan'] = $this->model->getAll();
-        $data['pelanggan'] = $pelangganModel->getAll();
+        
+        // Mengambil data pelanggan dan produk
+        require_once 'app/models/Pelanggan.php';
+        require_once 'app/models/Produk.php';
+    
+        $pelangganModel = new Pelanggan();
+        $produkModel = new Produk();
+    
+        $data['dataPelanggan'] = $pelangganModel->getAll();
+        $data['dataProduk'] = $produkModel->getAll();
+    
         include 'app/views/contents/penjualan.php';
+    }    
+
+    public function detailpenjualan() {
+        $data['penjualan'] = $this->model->getAll();
+        include 'app/views/contents/detailpenjualan.php';
     }
 
     public function tambahpenjualan() {
-        if (!isset($_POST['PelangganID']) || empty($_POST['PelangganID'])) {
-            die("Error: Pelanggan harus dipilih.");
-        }
-    
-        $data = [
-            'TanggalPenjualan' => $_POST['TanggalPenjualan'],
-            'TotalHarga' => $_POST['TotalHarga'],
-            'PelangganID' => $_POST['PelangganID']
-        ];
-
-        $penjualanModel = new Penjualan();
-        if ($penjualanModel->create($data)) {
-            header("Location: index.php?page=penjualan");
-            exit();
-        } else {
-            die("Error: Gagal menambahkan data penjualan.");
-        }
-    }
-    
-
-    public function editpenjualan($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->model->update($id, $_POST);
+            $this->model->create($_POST);
             header("Location: index.php?page=penjualan");
+            exit;
         }
-        $data['penjualan'] = $this->model->getById($id);
-    }
-
-    public function hapuspenjualan($id) {
-        $this->model->delete($id);
-        header("Location: index.php?page=penjualan");
     }
 }
 ?>

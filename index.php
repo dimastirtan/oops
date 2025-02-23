@@ -35,10 +35,8 @@ if ($page == 'pelanggan') {  //routing untuk pelanggan
     $penjualan->penjualan();
 } elseif ($action == 'tambahpenjualan') {
     $penjualan->tambahpenjualan();
-} elseif ($action == 'editpenjualan') {
-    $penjualan->editpenjualan($id);
-} elseif ($action == 'hapuspenjualan') {
-    $penjualan->hapuspenjualan($id);
+} elseif ($page == 'detailpenjualan') {
+    $penjualan->detailpenjualan();
 } else {
     $home->home();
 }

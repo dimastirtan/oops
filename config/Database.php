@@ -13,5 +13,10 @@ class Database {
             die("Koneksi gagal: " . $this->koneksi->connect_error);
         }
     }
+
+// Getter untuk koneksi database
+public function getKoneksi() {
+    return $this->koneksi;
+}
 }
 ?>

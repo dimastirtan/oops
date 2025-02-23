@@ -4,14 +4,13 @@ require_once 'config/Database.php';
 class Pelanggan extends Database {
 
     public function getAll() {
-        $query = "SELECT * FROM pelanggan";
+        $query = "SELECT * FROM pelanggan ORDER BY NamaPelanggan ASC";
         $result = $this->koneksi->query($query);
-    
-        $pelanggan = [];
+        $hasil = [];
         while ($row = $result->fetch_assoc()) {
-            $pelanggan[] = $row;
+            $hasil[] = $row;
         }
-        return $pelanggan;
+        return $hasil;
     }
     
 

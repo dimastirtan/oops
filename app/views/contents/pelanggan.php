@@ -1,7 +1,7 @@
 
 
 <h1>Data Pelanggan</h1>
-<a href="index.php" class="btn btn-secondary">Kembali</a>
+<a class="btn btn-secondary" href="index.php">Kembali Ke Home</a>
 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahPelanggan">Tambah Produk</button>
 
 <div style="max-height: 600px; overflow-y: auto;" class="my-3">
